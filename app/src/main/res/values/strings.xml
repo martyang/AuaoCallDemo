@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ToolBarDemo</string>
+    <string name="add">New</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
+    <string name="tips">该工具实现自动拨打电话，一定时长后自动挂断，你可以添加多个号码进行测试。</string>
+    <string name="testcount">测试次数:</string>
+    <string name="add_str">添加</string>
+    <string name="phonenumber">测试号码:</string>
+    <string name="add_number">已添加的号码：</string>
+    <string name="starttest">开始测试</string>
+    <string name="stop_test">停止测试</string>
+</resources>

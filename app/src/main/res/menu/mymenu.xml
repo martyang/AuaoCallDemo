@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/test_report"
+        android:title="测试报告"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/send_email"
+        android:title="发送邮件"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/note"
+        android:title="注意事项"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/author"
+        android:title="作者"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="关于"
+        app:showAsAction="never"/>
+
+
+</menu>
