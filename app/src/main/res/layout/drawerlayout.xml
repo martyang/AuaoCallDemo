@@ -47,6 +47,7 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/phone_number"
+                android:inputType="phone"
                 android:text="10086"/>
             <Button
                 android:layout_width="wrap_content"
@@ -68,6 +69,7 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/test_count"
+                android:inputType="number"
                 android:text="100"/>
 
         </LinearLayout>

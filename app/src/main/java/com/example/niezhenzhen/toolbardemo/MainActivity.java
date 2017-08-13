@@ -164,10 +164,12 @@ public class MainActivity extends AppCompatActivity {
                                    if(isRunning){
                                        String number;
                                        Log.i(TAG, "拨打电话:" + i);
+                                       saveReult("自动拨电话测试结果：\n");
                                        if(numbers.size()==0){
                                            number = "10086";
                                        }else {
                                            number = numbers.get(i%numbers.size());
+                                           saveReult(getCurrentTime()+":start call "+number+"\n");
                                            Log.i(TAG,"Test number:"+number);
                                        }
                                        startTest(number);
@@ -177,21 +179,12 @@ public class MainActivity extends AppCompatActivity {
                                            if (endCall()) {
                                                Log.i(TAG, getCurrentTime()+"Result Success");
                                                success +=1;
-                                               if(i==0){
-                                                   saveReult("自动拨电话测试结果：\n");
-                                                   saveReult(getCurrentTime()+":Pass\n");
-                                               }else{
-                                                   saveReult(getCurrentTime()+":Pass\n");
-                                               }
+                                               saveReult(getCurrentTime()+":end call\n");
+                                               saveReult(getCurrentTime()+":Pass\n");
                                            }else{
                                                Log.i(TAG,"Result Failed");
                                                fail +=1;
-                                               if(i==0){
-                                                   saveReult("自动拨电话测试结果：\n");
-                                                   saveReult(getCurrentTime()+":Failed\n");
-                                               }else{
-                                                   saveReult(getCurrentTime()+":Failed\n");
-                                               }
+                                               saveReult(getCurrentTime()+":Failed\n");
                                            }
                                            Thread.sleep(10000);
                                        } catch (InterruptedException e) {
@@ -267,7 +260,12 @@ public class MainActivity extends AppCompatActivity {
             final Object iTelephony =  getITelephony.invoke(mTelephonyManager,(Object[])null);
             Method endCall = iTelephony.getClass().getDeclaredMethod("endCall",(Class[])null);
             endCall.setAccessible(true);
-            isEnd = (boolean) endCall.invoke(iTelephony,(Object[])null);
+            if(mTelephonyManager.getCallState()==TelephonyManager.CALL_STATE_OFFHOOK){
+                isEnd = (boolean) endCall.invoke(iTelephony,(Object[])null);
+            }else{
+                saveReult(getCurrentTime()+":call has dropped\n");
+            }
+
         }catch (Exception e){
             e.printStackTrace();
         }
