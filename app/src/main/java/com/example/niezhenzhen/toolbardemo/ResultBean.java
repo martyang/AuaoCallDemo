@@ -5,8 +5,8 @@ package com.example.niezhenzhen.toolbardemo;
  */
 
 public class ResultBean  {
-    int passCount;
-    int failCount;
+    private int passCount;
+    private int failCount;
 
     public ResultBean(int pass,int fail){
         this.passCount = pass;
