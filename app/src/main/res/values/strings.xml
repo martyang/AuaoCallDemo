@@ -3,7 +3,8 @@
     <string name="add">New</string>
     <string name="search">Search</string>
     <string name="delete">Delete</string>
-    <string name="tips">该工具实现自动拨打电话，一定时长后自动挂断，你可以添加多个号码进行测试。</string>
+    <string name="tips">该工具实现自动拨打电话，一定时长后自动挂断，你可以添加多个号码进行测试。
+        测试时请允许所有的权限，测试结果可在状态栏隐藏菜单或侧滑菜单查看。</string>
     <string name="testcount">测试次数:</string>
     <string name="add_str">添加</string>
     <string name="phonenumber">测试号码:</string>
